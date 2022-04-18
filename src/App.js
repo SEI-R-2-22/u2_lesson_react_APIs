@@ -5,7 +5,11 @@ const App = () => {
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null) // this should be a movie once you select one
 
-  return <div></div>
+  return (
+    <div>
+
+    </div>
+  )
 }
 
 export default App
