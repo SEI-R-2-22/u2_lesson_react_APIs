@@ -250,17 +250,16 @@ Take a look at your browser, you should now have a grid displaying some movies!
 
 ## You Do
 
-Seeing some movies is all fine and good, however seeing details is much more valuable!
+ [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
 
-[TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
-
-- Create a `MovieDetails` component
-- In that component, create some state for `movieDetails`
-- Still in `MovieDetails`, utilizing `axios`, make a request to the following endpoint: `${BASE_URL}/movie/<the selected movies ID>`
-- In your `App.js`, create a function that accepts a `movieId` as a parameter and sets that `movieId` to the `selectedMovie` state.
-- Pass the above function to your `MovieList` component as a prop and have the `button` invoke this function `onClick`. You'll want to pass the movie id to this function. **Hint: Use the callback syntax!**
-- Pass the `selectedMovie` state to the `MovieDetails` component and watch it in a `useEffect`. Remember you can watch `props` in the dependency array!
-- Finally display the details for the selected movie in your `MovieDetails`.
+ - In your `App` component: 
+  - Create a function called that accepts a `movieId` as a parameter and sets that `movieId` to the `selectedMovie` state.
+  - Pass your newly created function to your `MovieList` component as a prop and have the `button` call this function `onClick`. You will need to provide the movie id as an argument to this function.
+- Create a `MovieDetails` component:
+  - In `MovieDetails`, create a state variable for `movieDetails` with the `useState()` hook.
+  - Pass the `selectedMovie` state to the `MovieDetails` component and track it in a `useEffect`. Remember you can watch `props` in the dependency array!
+  - Make an axios request to the following endpoint: `${BASE_URL}/movie/${props.selectedMovie.id}` inside of the `useEffect` hook.
+  - Finally display the details for the selected movie in your `MovieDetails`.
 
 ## Bonus
 
